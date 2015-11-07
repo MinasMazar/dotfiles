@@ -1,13 +1,6 @@
 #!/bin/sh
 
-if test ! $(which rbenv)
-then
-  echo "  Installing rbenv for you."
-  brew install rbenv > /tmp/rbenv-install.log
-fi
+ruby_version=2.2
 
-if test ! $(which ruby-build)
-then
-  echo "  Installing ruby-build for you."
-  brew install ruby-build > /tmp/ruby-build-install.log
-fi
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install $ruby_version
